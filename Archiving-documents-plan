@@ -1,0 +1,23 @@
+import os
+import time
+
+# Specify the file path
+file_path = "/path/to/your/file.ext"
+
+# Get the file's modification time
+mod_time = os.path.getmtime(file_path)
+
+# Calculate the current time
+current_time = time.time()
+
+# Calculate the time difference between current time and file's modification time
+time_difference = current_time - mod_time
+
+# Calculate the number of seconds in a week
+one_week_in_seconds = 7 * 24 * 60 * 60
+
+# Check if the file was modified within the last week
+if time_difference < one_week_in_seconds:
+    print("File was modified within the last week.")
+else:
+    print("File was not modified within the last week.")
